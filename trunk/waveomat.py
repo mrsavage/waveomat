@@ -36,7 +36,7 @@ def Notify(context):
 if __name__ == '__main__':
     myRobot = robot.Robot('waveomat', 
         image_url='http://waveomat.appspot.com/icon.png',
-        version='6',
+        version='7',
         profile_url='http://waveomat.appspot.com/')
     myRobot.RegisterHandler(events.WAVELET_PARTICIPANTS_CHANGED, OnParticipantsChanged)
     myRobot.RegisterHandler(events.WAVELET_SELF_ADDED, OnRobotAdded)
