@@ -29,7 +29,7 @@ def OnDocumentChanged(properties, context):
         Notify(context)
 
 def Notify(context):
-    text = TEXTS[randint(0,len(TEXTS))]
+    text = TEXTS[randint(0,len(TEXTS)-1)]
     root_wavelet = context.GetRootWavelet()
     root_wavelet.CreateBlip().GetDocument().SetText(text)
 
