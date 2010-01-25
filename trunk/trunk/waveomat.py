@@ -23,7 +23,7 @@ def OnRobotAdded(properties, context):
     """Invoked when the robot has been added."""
     Notify(context)
 
-def OnDocumentChanged(properties, context):
+def OnBlipSubmitted(properties, context):
     """Invoked when the document has been changed."""
     if randint(0,1):
         Notify(context)
@@ -40,5 +40,5 @@ if __name__ == '__main__':
         profile_url='http://waveomat.appspot.com/')
     myRobot.RegisterHandler(events.WAVELET_PARTICIPANTS_CHANGED, OnParticipantsChanged)
     myRobot.RegisterHandler(events.WAVELET_SELF_ADDED, OnRobotAdded)
-    myRobot.RegisterHandler(events.DOCUMENT_CHANGED, OnDocumentChanged)
+    myRobot.RegisterHandler(events.BLIP_SUBMITTED, OnBlipSubmitted)
     myRobot.Run()
