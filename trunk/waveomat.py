@@ -26,8 +26,7 @@ def OnRobotAdded(properties, context):
 def OnDocumentChanged(properties, context):
     """Invoked when the document has been changed."""
     if randint(0,1):
-        text = TEXTS[randint(0,len(TEXTS))]
-        Notify(text)
+        Notify(context)
 
 def Notify(context):
     text = TEXTS[randint(0,len(TEXTS))]
@@ -37,7 +36,7 @@ def Notify(context):
 if __name__ == '__main__':
     myRobot = robot.Robot('waveomat', 
         image_url='http://waveomat.appspot.com/icon.png',
-        version='4',
+        version='5',
         profile_url='http://waveomat.appspot.com/')
     myRobot.RegisterHandler(events.WAVELET_PARTICIPANTS_CHANGED, OnParticipantsChanged)
     myRobot.RegisterHandler(events.WAVELET_SELF_ADDED, OnRobotAdded)
