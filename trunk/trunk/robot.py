@@ -77,6 +77,7 @@ class WaveomatRobot(robot.Robot):
         ('/_wave/robot/profile', lambda: robot.RobotProfileHandler(self)),
         ('/_wave/robot/jsonrpc', lambda: robot.RobotEventHandler(self)),
         ('/_wave/text', lambda: web.RobotExternalHandler(self)),
+        ('/', lambda: web.RobotFrontPageHandler(self)),
     ], debug=debug)
     run_wsgi_app(app)
 
